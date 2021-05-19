@@ -1,19 +1,29 @@
 import React from 'react';
 import './App.css';
-import SplunkJsExample from './SplunkJsExample';
+import ErrorBoundary from "./ErrorBoundary";
+import BuggyComponent from "./BuggyComponent";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          1. Edit <code>src/splunkConfig.js</code> to input your Splunk host/port information and restart this project using <code>npm start</code>.
-        </p>
-        <SplunkJsExample />
-
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <a
+                    className="App-link"
+                    href="https://reactjs.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Learn React
+                </a>
+                <p>Buggy counter with error boundary</p>
+                <ErrorBoundary>
+                    <BuggyComponent/>
+                </ErrorBoundary>
+                <p>Buddy counter without error boundary</p>
+                <BuggyComponent/>
+            </header>
+        </div>
+    );
 }
 
 export default App;

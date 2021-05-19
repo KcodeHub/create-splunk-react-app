@@ -1,6 +1,6 @@
 const splunkConfig = {
     host: 'localhost',
-    port: '8000'
+    port: '8088'
 };
 
 module.exports = { splunkConfig };
